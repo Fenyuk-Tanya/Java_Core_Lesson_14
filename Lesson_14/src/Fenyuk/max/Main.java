@@ -74,6 +74,7 @@ public class Main {
 
 			default: {
 				System.out.println("Введіть число від 1 до 9!");
+				scanner.close();
 				break;
 			}
 			}
