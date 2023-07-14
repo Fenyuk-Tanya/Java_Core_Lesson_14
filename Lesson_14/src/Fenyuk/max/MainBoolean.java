@@ -2,10 +2,10 @@ package Fenyuk.max;
 
 import java.util.Scanner;
 
-public class Main {
+public class MainBoolean {
 	
 	static void menu() {
-		System.out.println();
+
 		System.out.println("Введіть 1, щоб додати товар на вітрину");
 		System.out.println("Введіть 2, щоб видалити товар з вітрини");
 		System.out.println("Введіть 3, щоб замінити товар на вітрині");
@@ -17,71 +17,48 @@ public class Main {
 		System.out.println("Введіть 9, щоб вийти з програми");
 	}
 	
+
 	public static void main(String[] args) {
 		
 		Showcase showcase = new Showcase();
 		Scanner scanner = new Scanner(System.in);
-
-		while (true) {
+		
+		Boolean myLoopControl = true;
+		
+		while(myLoopControl) {
 			menu();
-
-			switch (scanner.nextInt()) {
-
-			case 1: {
+			
+			String strUserInput = scanner.next();
+			int intUserInput = Integer.parseInt(strUserInput);
+			
+			if (intUserInput == 1) {
 				showcase.addCommodity();
-				break;
 			}
-
-			case 2: {
+			else if (intUserInput == 2) {
 				showcase.removeCommodity();
-				break;
 			}
-
-			case 3: {
+			else if(intUserInput == 3) {
 				showcase.replaceCommodity();
-				break;
 			}
-
-			case 4: {
+			else if(intUserInput == 4) {
 				showcase.sortByName();
-				break;
 			}
-
-			case 5: {
+			else if(intUserInput == 5) {
 				showcase.sortByLength();
-				break;
 			}
-
-			case 6: {
+			else if(intUserInput == 6) {
 				showcase.sortByWidth();
-				break;
 			}
-
-			case 7: {
+			else if(intUserInput == 7) {
 				showcase.sortByWeight();
-				break;
 			}
-
-			case 8: {
+			else if(intUserInput == 8) {
 				showcase.getCommodity();
-				break;
 			}
-
-			case 9: {
-				System.exit(0);
-				break;
-			}
-
-			default: {
-				System.out.println("Введіть число від 1 до 9!");
-				break;
+			else {
+				myLoopControl = false;
 			}
 		}
-			scanner.close();
-		}
+		scanner.close();
 	}
-
-		
-		
-	}
-
+}
