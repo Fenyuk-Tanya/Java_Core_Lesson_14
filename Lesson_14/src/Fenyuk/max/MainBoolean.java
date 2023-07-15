@@ -55,8 +55,12 @@ public class MainBoolean {
 			else if(intUserInput == 8) {
 				showcase.getCommodity();
 			}
-			else {
+			else if (intUserInput == 9){
 				myLoopControl = false;
+				System.out.println("Ви вийшли з програми");
+			}
+			else {
+				System.out.println("Введіть число від 1 до 9!");
 			}
 		}
 		scanner.close();
